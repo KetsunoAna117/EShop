@@ -1,26 +1,26 @@
 "use client";
 
-import eshoppingLogo from "./assets/eshoppingLogo.png";
-import Image from "next/image";
-import React, { useState, useEffect } from "react";
-import OptionMenu from "./components/option-menu";
+import SearchBar from "@/components/search-bar";
+import React, { useState } from "react";
 
 export default function Home() {
+  const [searchValue, setSearchValue] = useState<string>("");
+
+  function onUserInput(event: React.ChangeEvent<HTMLInputElement>) {
+    setSearchValue(event.target.value);
+  }
+
+  function onEnterButtonPressed() {
+    console.log(searchValue);
+  }
+
   return (
-    <div className="flex items-center justify-center w-full flex-col">
-      {/* Navbar */}
-      <div className="w-11/12 mt-6 flex items-center justify-between">
-        {/* Leftside */}
-        <div className="flex items-center">
-          <Image src={eshoppingLogo} alt="eShopping" className="w-20 h-20" />
-          <div className="ms-5 ">
-            <h4 className="text-lg font-bold">E-Shopping</h4>
-            <h6 className="font-extralight text-xs">Everything is on sale!</h6>
-          </div>
-        </div>
-        {/* RightSide */}
-        <OptionMenu />
-      </div>
+    <div className="w-full flex flex-col justify-center items-center">
+      <SearchBar
+        onChange={onUserInput}
+        placeholder="Search Products Here..."
+        onEnterButtonPressed={onEnterButtonPressed}
+      />
     </div>
   );
 }
