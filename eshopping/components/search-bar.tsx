@@ -16,7 +16,7 @@ export default function SearchBar({
   }
 
   return (
-    <div className="w-9/12 bg-white flex items-center px-5 py-3 rounded max-md:w-full">
+    <div className="w-9/12 bg-white flex items-center px-5 py-3 rounded mb-5 max-md:w-full">
       <Icon icon="map:search" className="text-gray-700 mr-3 text-lg" />
       <input
         onKeyDown={onUserClickedEnter}

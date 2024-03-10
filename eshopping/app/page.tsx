@@ -3,7 +3,7 @@
 import SearchBar from "@/components/search-bar";
 import React, { useState } from "react";
 
-export default function Home() {
+export default function Main() {
   const [searchValue, setSearchValue] = useState<string>("");
 
   function onUserInput(event: React.ChangeEvent<HTMLInputElement>) {
@@ -21,6 +21,7 @@ export default function Home() {
         placeholder="Search Products Here..."
         onEnterButtonPressed={onEnterButtonPressed}
       />
+      <h1>Home</h1>
     </div>
   );
 }
